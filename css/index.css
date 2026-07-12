@@ -57,6 +57,15 @@ a{
     color: inherit;
 }
 
+.section-head h2{
+    font-size:   2.1rem;
+    line-height: 1.15;
+}
+.section-head p{
+    color: var(--slate);
+    margin-top:    1rem;
+    font-size:     1rem;
+}
 .rule-single{
     background: var(--line);
     height:     1px;
@@ -209,6 +218,83 @@ a{
     }
 }
 
+/*--Services-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.services{
+    padding-bottom: 8rem;
+    padding-top:    6rem;
+}
+.services .section-head h2{
+    margin-top: 2rem;
+    max-width: 40rem;
+}
+.services .section-head p{
+    margin-bottom: 4rem;
+    margin-top:    1rem;
+    max-width:    40rem;
+}
+
+.services-grid{
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    gap:     1px;
+
+    border: 1px solid var(--line);
+    background:       var(--line);
+    border-radius:    0.5rem;
+    overflow:         hidden;
+}
+.service-card{
+    background: var(--white);
+    padding:    2rem 1.5rem;
+    transition: ease-in-out 0.1s;
+}
+.service-card:hover{
+    background: var(--green-tint);
+}
+.service-index{
+    font-family:   "IBM Plex Mono", monospace;
+    font-size:      0.78rem;
+    letter-spacing: 0.05rem;
+    color:          var(--green-deep);
+}
+.service-card h3{
+    font-size:  1.15rem;
+    margin-top: 1rem;
+    color:      var(--navy);
+}
+.service-card p{
+    margin-top: 0.5rem;
+    font-size:  0.9rem;
+    color:      var(--slate);
+}
+
+@media (max-width: 1000px){
+    .services-grid{
+        transform:   translate(-50%);
+        max-width:   calc(100% - 2rem);
+        width:       30rem;
+        margin-left: 50%;
+        display:     block;
+    }
+    .services .wrap{
+        transform:   translate(-50%);
+        max-width:   calc(100% - 2rem);
+        width:       30rem;
+        margin-left: 50%;
+    }
+    .service-card{
+        border-bottom: 1px solid var(--line);
+    }
+}
+@media (max-width: 768px) and (orientation: portrait){
+    .services-grid{
+        max-width: calc(100% - 4rem);
+    }
+    .services .wrap{
+        max-width: calc(100% - 4rem);
+    }
+}
+
 /*--About--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 .about{
     background:     var(--paper-2);
@@ -312,7 +398,7 @@ a{
 
 /*--Contact------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 .contact{
-    padding-bottom: 7rem;
+    padding-bottom: 8rem;
     padding-top:    2rem;
     margin-top:     2rem;
 }
