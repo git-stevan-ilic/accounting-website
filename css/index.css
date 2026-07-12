@@ -1,11 +1,15 @@
 /*--Initial------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 @font-face{
     font-family: "Inter";
-    src: url("/fonts/Inter.ttf");
+    src: url("../fonts/Inter.ttf");
 }
 @font-face{
     font-family: "Fraunces";
-    src: url("/fonts/Fraunces.ttf");
+    src: url("../fonts/Fraunces.ttf");
+}
+@font-face{
+    font-family: "IBM Plex Mono";
+    src: url("../fonts/IBM Plex Mono.ttf");
 }
 
 * {
@@ -23,6 +27,7 @@
     --ink:          #14201C;
     --line:         #D3DCD8;
     --white:        #FFFFFF;
+    --off-white:    #AEBBC3;
 }
 html{
     scroll-behavior: smooth;
@@ -51,9 +56,40 @@ a{
     text-decoration: none;
     color: inherit;
 }
+
 .wrap{
-    max-width: calc(100% - 2rem);
-    width:     60rem;
+    transform:   translate(-50%);
+    max-width:   calc(100% - 2rem);
+    width:       60rem;
+    margin-left: 50%;
+}
+.eyebrow{
+    font-family:   "IBM Plex Mono", monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size:      0.78rem;
+    color:          var(--green-deep);
+    
+    align-items: center;
+    display:     flex;
+    gap: 1rem;
+}
+.eyebrow::before{
+    background: var(--green-deep);
+    height: 1px;
+    width: 2rem;
+    content: "";
+}
+
+@media (max-width: 468px) and (orientation: portrait){
+    :root{
+        font-size: 13px;
+    }
+}
+@media (max-width: 768px) and (orientation: landscape){
+    :root{
+        font-size: 13px;
+    }
 }
 
 /*--Head---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -75,8 +111,10 @@ a{
     justify-content: space-between;
     align-items:     center;
     display:         flex;
-    
-    height: 100%;
+    transform:       none;
+
+    height:     100%;
+    margin-left: 0px;
 }
 .head-logo{
     margin-top: 1rem;
@@ -127,8 +165,8 @@ a{
 /*--Foot---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 .foot{
     background: var(--navy);
-    color:    #AEBBC3;
-    padding:   2.5rem 0;
+    color:      var(--off-white);
+    padding:    2.5rem 0;
 }
 .foot-row{
     justify-content: space-between;
@@ -136,8 +174,6 @@ a{
     flex-wrap:       wrap;
     display:         flex;
 
-    transform:   translate(-50%);
-    margin-left: 50%;
     font-size:   0.85rem;
     gap:         1rem;
 }
@@ -165,5 +201,157 @@ a{
     }
     .footer-links{
         gap: 1.5rem;
+    }
+}
+
+/*--Contact------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.contact{
+    padding-bottom: 7rem;
+    padding-top:    2rem;
+}
+.contact-grid{
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    
+    padding-bottom: 3rem;
+    padding-top:    2rem;
+    gap: 4rem;
+}
+.contact-info h2{
+    font-size:     2.1rem;
+    line-height:   1.15;
+    margin-bottom: 1rem;
+}
+.contact-info > p{
+    color: var(--slate);
+    max-width:    30rem;
+    margin-bottom: 2rem;
+}
+
+.info-row{
+    display:    flex;
+    gap:        1rem;
+    padding:    1rem 0;
+    border-top: 1px solid var(--line);
+}
+.info-row:last-child{
+    border-bottom: 1px solid var(--line);
+}
+.info-label{
+    font-family:   "IBM Plex Mono", monospace;
+    text-transform: uppercase;
+    font-size:      0.72rem;
+    letter-spacing: 0.08em;
+    
+    color:       var(--green-deep);
+    width:       6rem;
+    flex-shrink: 0;
+    padding-top: 0.2rem;
+}
+.info-value{
+    color:  var(--ink);
+    font-size: 0.95rem;
+}
+.info-value span{
+    display:    block;
+    color:      var(--slate);
+    font-size:  0.85rem;
+    margin-top: 0.2rem;
+}
+
+.form-card{
+    background:    var(--white);
+    border:        1px solid var(--line);
+    border-radius: 0.5rem;
+    padding:       2rem;
+}
+.form-card h3{
+    font-size:     1.2rem;
+    margin-bottom: 0.5rem;
+}
+.form-card p.sub{
+    color:    var(--slate);
+    font-size:     0.88rem;
+    margin-bottom:  1.5rem;
+}
+.form-row{
+    margin-bottom: 1rem;
+}
+.form-row label{
+    display:        block;
+    font-family:   "IBM Plex Mono", monospace;
+    font-size:      0.78rem;
+    letter-spacing: 0.04em;
+    margin-bottom:  0.5rem;
+    color:    var(--slate);
+}
+.form-row input, .form-row textarea{
+    border: 1px solid var(--line);
+    border-radius:   0.5rem;
+    padding: 0.6rem 0.75rem;
+    width:             100%;
+    font-size:      0.92rem;
+    font-family: "Inter", sans-serif;
+
+    background: var(--paper);
+    color:      var(--ink);
+}
+.form-row input:focus, .form-row textarea:focus{
+    outline: 2px solid var(--green-deep);
+    outline-offset: 1px;
+}
+.form-row textarea{
+    resize: vertical;
+    min-height: 6rem;
+}
+.form-submit{
+    background: var(--green-deep);
+    color:      var(--white);
+
+    transition: ease-in-out 0.1s;
+    cursor:     pointer;
+    border:     none;
+
+    width:           100%;
+    padding:         1rem;
+    border-radius: 0.5rem;
+    font-weight:      600;
+    font-size:    0.92rem;
+    
+}
+.form-submit:hover{
+    background: var(--navy);
+}
+.form-submit:active{
+    background: var(--navy);
+    opacity:    0.9;
+}
+
+@media (max-width: 1000px){
+    .contact-grid{
+        transform:   translate(-50%);
+        max-width:   calc(100% - 2rem);
+        width:       30rem;
+        margin-left: 50%;
+        display:     block;
+    }
+    .form-card{
+        margin-top: 3rem;
+    }
+    #contact .section-head{
+        transform:   translate(-50%);
+        max-width:   calc(100% - 2rem);
+        width:       30rem;
+        margin-left: 50%;
+    }
+}
+@media (max-width: 468px) and (orientation: portrait){
+    .contact{
+        padding-bottom: 2rem;
+    }
+}
+@media (max-width: 768px) and (orientation: landscape){
+    .contact{
+        padding-bottom: 2rem;
     }
 }
