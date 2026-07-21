@@ -627,10 +627,14 @@ a{
     font-size: 0.95rem;
 }
 .info-value span{
-    display:    block;
-    color:      var(--slate);
-    font-size:  0.85rem;
-    margin-top: 0.2rem;
+    display:       block;
+    color:         var(--slate);
+    font-size:     0.85rem;
+    margin-bottom: 0.75rem;
+    margin-top:    0rem;
+}
+.info-value span:last-child{
+    margin-bottom: 0px;
 }
 
 .form-card{
@@ -675,8 +679,8 @@ a{
     outline-offset: 1px;
 }
 .form-row textarea{
-    resize: vertical;
-    min-height: 6rem;
+    resize:  vertical;
+    min-height: 12rem;
 }
 .form-submit{
     background: var(--green-deep);
