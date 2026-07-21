@@ -87,13 +87,19 @@ a{
     
     align-items: center;
     display:     flex;
-    gap: 1rem;
+    flex-wrap:   wrap;
+
+    gap:  0.5rem;
+    row-gap: 2px;
 }
 .eyebrow::before{
     background: var(--green-deep);
     height: 1px;
     width: 2rem;
     content: "";
+}
+.eyebrow-sep{
+    width: 0.5rem;
 }
 
 @media (max-width: 468px) and (orientation: portrait){
@@ -351,6 +357,12 @@ a{
     }
     .ledger-card{
         margin-top: 5rem;
+    }
+    .eyebrow-sep{
+        display: none;
+    }
+    .eyebrow-part:last-child{
+        margin-left: 2.5rem;
     }
 }
 
