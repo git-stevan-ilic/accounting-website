@@ -401,6 +401,9 @@ a{
     padding-bottom: 8rem;
     padding-top:    6rem;
 }
+.services .wrap{
+    width: 72rem;
+}
 .services .section-head h2{
     margin-top: 2rem;
     max-width: 40rem;
@@ -412,7 +415,7 @@ a{
 }
 
 .services-grid{
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     display: grid;
     gap:     1px;
 
